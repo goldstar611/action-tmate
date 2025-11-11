@@ -42,6 +42,9 @@ on:
 
 jobs:
   test:
+    env:
+      GH_TOKEN: ${{ github.token }}
+    
     if: ${{ inputs.container-runs-on == '(none)' }}
     runs-on: ${{ inputs.runs-on }}
     steps:
