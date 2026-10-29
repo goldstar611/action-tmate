@@ -3,6 +3,9 @@
 [![GitHub Actions](https://github.com/mxschmitt/action-tmate/workflows/Node.js%20CI/badge.svg)](https://github.com/mxschmitt/action-tmate/actions)
 [![GitHub Marketplace](https://img.shields.io/badge/GitHub-Marketplace-green)](https://github.com/marketplace/actions/debugging-with-tmate)
 
+> [!IMPORTANT]
+> The public tmate servers (`ssh.tmate.io`) were shut down in July 2025, so this action no longer works with its default settings. A rewrite of the tmate server in Rust and the return of the hosted service are tracked in [tmate-io/tmate#336](https://github.com/tmate-io/tmate/issues/336). Until then, you can [use your own tmate servers](#use-your-own-tmate-servers).
+
 This GitHub Action offers you a direct way to interact with the host system on which the actual scripts (Actions) will run.
 
 ## Features
@@ -50,7 +53,7 @@ on:
         type: boolean
         description: 'Run the build with tmate debugging enabled (https://github.com/marketplace/actions/debugging-with-tmate)'
         required: false
-        default: false
+        default: 'false'
 ```
 
 Then add an [`if`](https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions) condition to the debug step:
